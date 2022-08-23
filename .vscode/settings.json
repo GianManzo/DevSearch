@@ -1,0 +1,25 @@
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.probe": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": false,
+  // Runs Prettier, then ESLint
+  "editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    ".prettierignore": true,
+    ".prettierrc": true,
+    "package-lock.json": true,
+    "README.md": true,
+    "vite.config.ts": true,
+    ".gitignore": true,
+    ".eslintignore": true,
+    ".eslintrc": true,
+    "node_modules": true
+  }
+}
