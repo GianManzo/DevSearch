@@ -1,5 +1,5 @@
 export const Gray = {
-  100: '#b8bfc3,',
+  100: '#b8bfc3',
   200: '#717b90',
 };
 
