@@ -1,12 +1,14 @@
-export const Gray = {
-  100: '#b8bfc3',
-  200: '#717b90',
+export const Green = {
+  strong: '#00875F',
+  light: '#00B37E',
 };
 
-export const Blue = {
-  primary: '#2257aa',
-  300: '#2f406e',
-  400: '#13305e',
-  600: '#1f2a48',
-  800: '#141c2f',
+export const Gray = {
+  white: '#FFF',
+  100: '#E1E1E6',
+  200: '#C4C4CC',
+  300: '#8D8D99',
+  400: '#7C7C8A',
+  600: '#202024',
+  800: '#121214',
 };

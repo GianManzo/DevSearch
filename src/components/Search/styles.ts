@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { Blue, Gray } from '~/variables/colors';
+import { Green, Gray } from '~/variables/colors';
 
 export const Form = styled.form``;
 
 export const Wrapper = styled.div`
-  box-shadow: 0px 2px 2px 0px #161616;
+  box-shadow: 0px 2px 2px 0px ${Gray[600]};
   border-radius: 12px;
-  background-color: ${Blue[600]};
+  background-color: ${Gray[600]};
   padding: 0.875rem;
   width: 100%;
   display: flex;
@@ -16,28 +16,32 @@ export const Wrapper = styled.div`
   input {
     background: transparent;
     border: none;
-    font-size: 1.25rem;
+    font-size: 1rem;
     width: 100%;
     margin-left: 0.875rem;
     outline: none;
     color: ${Gray[100]};
 
     &::placeholder {
-      color: ${Gray[200]};
+      color: ${Gray[400]};
+      font-family: 'Roboto', sans-serif;
     }
   }
 
   button {
-    padding: 0.875rem;
+    padding: 1rem;
     border-radius: 12px;
     border: none;
-    background: ${Blue.primary};
-    font-size: 1.25rem;
-    color: #fff;
+    background: ${Green.strong};
+    font-size: 1rem;
+    color: ${Gray[100]};
     font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.3s;
 
     &:hover {
       cursor: pointer;
+      background: ${Green.light};
     }
   }
 `;

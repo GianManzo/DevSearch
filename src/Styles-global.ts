@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
-import { Blue } from '~/variables/colors';
+import { Gray } from '~/variables/colors';
 
 export const Global = createGlobalStyle`
   body {
@@ -9,7 +9,11 @@ export const Global = createGlobalStyle`
 }
 
 body{
-  background-color: ${Blue[800]};
+  background-color: ${Gray[800]};
+
+  @media (max-width: 768px) {
+  font-size: .875rem;
+}
 }
 
 code {
@@ -21,6 +25,13 @@ code {
   margin: 0;
   padding: 0;
 }
+
+a{
+  text-decoration: none;
+}
+
+
+
 `;
 
 export const Container = styled.div`
