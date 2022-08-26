@@ -2,30 +2,16 @@ import * as C from './styles';
 import { MagnifyingGlass } from 'phosphor-react';
 import { Green } from '~/variables/colors';
 import { IInput } from '~/interfaces/IInput';
+import { searchUser } from '../Fetch/SearchUser';
 
-export const Search = ({ inputValue, setInput, setData, error, setError }: IInput) => {
+export const Search = ({ inputValue, setInput, setData, setError }: IInput) => {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    searchUser(inputValue);
+    searchUser({ inputValue, setData, setError });
   }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-    setInput(e.target.value);
-  }
-
-  async function searchUser(input: string | unknown) {
-    try {
-      const response = await fetch(`https://api.github.com/users/${input}`);
-      if (!response.ok) {
-        setError(true);
-      } else {
-        const dataUser = await response.json();
-        setError(false);
-        setData(dataUser);
-      }
-    } catch (e) {
-      console.log(e);
-    }
+    setInput!(e.target.value);
   }
 
   return (

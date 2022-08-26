@@ -1,8 +1,8 @@
 import * as C from './styles';
 import { MapPin, Link, TwitterLogo, Buildings } from 'phosphor-react';
 import { IData } from '~/interfaces/IData';
-import { Error } from '../helpers/Error/Error';
-import { useEffect } from 'react';
+import { Error } from '../Helpers/Error';
+import { Home } from '../Home/Home';
 
 type Props = {
   data: IData | null;
@@ -11,7 +11,10 @@ type Props = {
 
 export const Profile = ({ data, error }: Props) => {
   if (data === null) {
-    return <div></div>;
+    if (error) {
+      return <Error />;
+    }
+    return <Home />;
   }
 
   return (
