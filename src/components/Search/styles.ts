@@ -4,7 +4,7 @@ import { Green, Gray } from '~/variables/colors';
 export const Form = styled.form``;
 
 export const Wrapper = styled.div`
-  box-shadow: 0px 2px 2px 0px ${Gray[600]};
+  box-shadow: 0 2px 8px ${Gray.shadow};
   border-radius: 12px;
   background-color: ${Gray[600]};
   padding: 0.875rem;

@@ -6,4 +6,6 @@ export interface IInput {
   setData: React.Dispatch<React.SetStateAction<IData | null>>;
   error?: boolean;
   setError: React.Dispatch<React.SetStateAction<boolean>>;
+  validation?: boolean;
+  setValidation?: React.Dispatch<React.SetStateAction<boolean>>;
 }

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { popup } from '~/Styles-global';
 import { Green, Gray } from '~/variables/colors';
 
 export const Wrapper = styled.section`
@@ -7,6 +8,7 @@ export const Wrapper = styled.section`
   background-color: ${Gray[600]};
   box-shadow: 0px 2px 2px 0px ${Gray[600]};
   border-radius: 12px;
+  animation: ${popup} 0.2s forwards;
 `;
 
 export const Infos = styled.div`

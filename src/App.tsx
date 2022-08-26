@@ -10,6 +10,7 @@ export const App = () => {
   const [inputValue, setInput] = useState('');
   const [data, setData] = useState<IData | null>(null);
   const [error, setError] = useState(false);
+  const [validation, setValidation] = useState(true);
 
   return (
     <>
@@ -21,8 +22,9 @@ export const App = () => {
           setData={setData}
           error={error}
           setError={setError}
+          setValidation={setValidation}
         />
-        <Profile data={data} error={error} />
+        <Profile data={data} error={error} validation={validation} />
       </C.Container>
     </>
   );

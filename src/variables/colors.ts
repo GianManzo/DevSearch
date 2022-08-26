@@ -5,6 +5,7 @@ export const Green = {
 
 export const Gray = {
   white: '#FFF',
+  shadow: '#00000033',
   100: '#E1E1E6',
   200: '#C4C4CC',
   300: '#8D8D99',

@@ -4,13 +4,22 @@ import { Green } from '~/variables/colors';
 import { IInput } from '~/interfaces/IInput';
 import { searchUser } from '../Fetch/SearchUser';
 
-export const Search = ({ inputValue, setInput, setData, setError }: IInput) => {
+export const Search = ({ inputValue, setInput, setData, setError, setValidation }: IInput) => {
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    searchUser({ inputValue, setData, setError });
+    setValidation!(true);
+    if (inputValue.length !== 0) {
+      searchUser({ inputValue, setData, setError, setValidation });
+    } else {
+      setError(false);
+      setValidation!(false);
+      setData(null);
+    }
   }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setError(false);
+    setValidation!(true);
     setInput!(e.target.value);
   }
 

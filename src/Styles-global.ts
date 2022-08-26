@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { Gray } from '~/variables/colors';
 
 export const Global = createGlobalStyle`
@@ -37,4 +37,13 @@ export const Container = styled.div`
   width: 100%;
   margin: 0 auto;
   height: 100vh;
+`;
+
+export const popup = keyframes`
+  from {
+    transform: scale(0);
+  }
+  to{
+    transform: scale(1);
+  }
 `;

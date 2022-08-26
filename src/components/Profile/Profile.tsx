@@ -7,20 +7,22 @@ import { Home } from '../Home/Home';
 type Props = {
   data: IData | null;
   error: boolean;
+  validation: boolean;
 };
 
-export const Profile = ({ data, error }: Props) => {
+export const Profile = ({ data, error, validation }: Props) => {
   if (data === null) {
-    if (error) {
-      return <Error />;
+    if (error || !validation) {
+      return <Error>{!validation ? 'Fill in the field!' : 'User not found!'}</Error>;
     }
     return <Home />;
   }
 
   return (
     <>
+      {!validation && <Error>Fill in the field!</Error>}
       {error ? (
-        <Error />
+        <Error>User not found!</Error>
       ) : (
         <C.Wrapper>
           <C.Infos>
