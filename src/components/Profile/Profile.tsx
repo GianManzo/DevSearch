@@ -1,8 +1,9 @@
 import * as C from './styles';
 import { MapPin, Link, TwitterLogo, Buildings } from 'phosphor-react';
 import { IData } from '~/interfaces/IData';
-import { Error } from '../Helpers/Error';
+import { Error } from '../Helpers/Error/Error';
 import { Home } from '../Home/Home';
+import { handleDate } from '../Helpers/Date/Date';
 
 type Props = {
   data: IData | null;
@@ -11,6 +12,7 @@ type Props = {
 };
 
 export const Profile = ({ data, error, validation }: Props) => {
+  console.log(data);
   if (data === null) {
     if (error || !validation) {
       return <Error>{!validation ? 'Fill in the field!' : 'User not found!'}</Error>;
@@ -34,7 +36,7 @@ export const Profile = ({ data, error, validation }: Props) => {
               <p>
                 <a href='https://github.com/'>{data?.company}</a>
               </p>
-              <p>Joined 25 Jan 2011</p>
+              {data !== null && <p>Update: {handleDate(data?.updated_at)}</p>}
             </C.BoxInfo>
           </C.Infos>
           <C.Summary>
@@ -76,7 +78,7 @@ export const Profile = ({ data, error, validation }: Props) => {
               </li>
               <li>
                 <Buildings weight='bold' />
-                {data?.company}
+                {data.company !== null ? data.company : 'Not Found'}
               </li>
             </ul>
           </C.Footer>
