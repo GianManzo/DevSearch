@@ -25,18 +25,18 @@ export const Image = styled.img`
 `;
 
 export const BoxInfo = styled.div`
-  line-height: 1.8;
   font-family: 'Fira Sans', sans-serif;
 
   p:first-child {
     font-size: 1.5rem;
-    letter-spacing: 0.15rem;
     color: #fff;
+    margin-bottom: 0.45rem;
   }
 
   p:last-child {
     color: ${Gray[100]};
     font-size: 0.785rem;
+    margin-top: 1rem;
   }
 
   a {
@@ -84,6 +84,10 @@ export const Display = styled.div`
 
 export const Footer = styled.footer`
   ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
     li,
     a {
       color: ${Gray[200]};

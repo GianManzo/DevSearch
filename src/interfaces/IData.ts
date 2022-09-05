@@ -9,4 +9,6 @@ export interface IData {
   location: string;
   twitter_username: string;
   html_url: string;
+  created_at?: Date;
+  updated_at: Date;
 }

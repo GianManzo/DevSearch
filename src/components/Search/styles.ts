@@ -38,6 +38,7 @@ export const Wrapper = styled.div`
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     transition: 0.3s;
+    width: 12rem;
 
     &:hover {
       cursor: pointer;
