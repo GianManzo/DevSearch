@@ -4,16 +4,17 @@ import { IData } from '~/interfaces/IData';
 import { Error } from '../Helpers/Error/Error';
 import { Home } from '../Home/Home';
 import { handleDate } from '../Helpers/Date/Date';
+import { Loading } from '../Helpers/Loading/Loading';
 
 type Props = {
   data: IData | null;
   error: boolean;
   validation: boolean;
+  loading: boolean;
 };
 
-export const Profile = ({ data, error, validation }: Props) => {
-  console.log(data);
-  if (data === null) {
+export const Profile = ({ data, error, validation, loading }: Props) => {
+  if (data === null && !loading) {
     if (error || !validation) {
       return <Error>{!validation ? 'Fill in the field!' : 'User not found!'}</Error>;
     }
@@ -22,10 +23,10 @@ export const Profile = ({ data, error, validation }: Props) => {
 
   return (
     <>
+      {data === null && loading ? <Loading /> : null}
       {!validation && <Error>Fill in the field!</Error>}
-      {error ? (
-        <Error>User not found!</Error>
-      ) : (
+      {error && <Error>User not found!</Error>}
+      {data !== null ? (
         <C.Wrapper>
           <C.Infos>
             <div>
@@ -73,17 +74,17 @@ export const Profile = ({ data, error, validation }: Props) => {
                   rel='noreferrer'
                 >
                   <TwitterLogo weight='bold' />
-                  twitter
+                  {data?.twitter_username !== null ? '@' + data?.twitter_username : 'Not Found'}
                 </a>
               </li>
               <li>
                 <Buildings weight='bold' />
-                {data.company !== null ? data.company : 'Not Found'}
+                {data?.company !== null ? data?.company : 'Not Found'}
               </li>
             </ul>
           </C.Footer>
         </C.Wrapper>
-      )}
+      ) : null}
     </>
   );
 };

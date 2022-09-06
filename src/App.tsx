@@ -11,6 +11,7 @@ export const App = () => {
   const [data, setData] = useState<IData | null>(null);
   const [error, setError] = useState(false);
   const [validation, setValidation] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   return (
     <>
@@ -23,8 +24,9 @@ export const App = () => {
           error={error}
           setError={setError}
           setValidation={setValidation}
+          setLoading={setLoading}
         />
-        <Profile data={data} error={error} validation={validation} />
+        <Profile data={data} error={error} validation={validation} loading={loading} />
       </C.Container>
     </>
   );
