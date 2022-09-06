@@ -8,4 +8,5 @@ export interface IInput {
   setError: React.Dispatch<React.SetStateAction<boolean>>;
   validation?: boolean;
   setValidation?: React.Dispatch<React.SetStateAction<boolean>>;
+  setLoading?: React.Dispatch<React.SetStateAction<boolean>>;
 }
